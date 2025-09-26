@@ -6,61 +6,24 @@
   <title>مستشفى ريسبكت</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="intro-body">
   <header class="header">
     <div class="logo-title">
-      <img src="logo.png" alt="شعار" class="logo">
+      <img src="assets/logo.png" alt="شعار" class="logo">
       <h1>مستشفى ريسبكت</h1>
-    </div>
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="ابحث بالاسم أو الرقم الوطني">
-      <button onclick="searchInsurance()">بحث</button>
-      <button onclick="openAddForm()">إضافة</button>
-      <button onclick="confirmDeleteAll()">حذف الكل</button>
     </div>
   </header>
 
-  <main>
-    <div class="categories">
-      <button class="cat silver">فضي</button>
-      <button class="cat gold">ذهبي</button>
-      <button class="cat platinum">بلاتيني</button>
-      <button class="cat expired">منتهي</button>
-      <button class="cat all">الكل</button>
-    </div>
-    <div id="insuranceList" class="insurance-list"></div>
+  <main class="intro">
+    <h2>مرحباً بك</h2>
+    <p>اختر نوع الدخول</p>
+    <button onclick="login('admin')" class="btn gold">مشرفين الصحة والإدارة</button>
+    <button onclick="login('viewer')" class="btn silver">أفراد الصحة</button>
   </main>
 
   <footer>
     <p>© 2025 مستشفى ريسبكت</p>
   </footer>
-
-  <!-- نافذة إضافة / تعديل -->
-  <div id="addForm" class="modal hidden">
-    <div class="modal-content">
-      <span class="close" onclick="closeForm()">&times;</span>
-      <h2>إضافة بيانات التأمين</h2>
-      <label>الاسم:</label>
-      <input type="text" id="name">
-      <label>الرقم الوطني:</label>
-      <input type="text" id="nationalId">
-      <label>الفئة:</label>
-      <select id="category">
-        <option value="فضي">فضي</option>
-        <option value="ذهبي">ذهبي</option>
-        <option value="بلاتيني">بلاتيني</option>
-        <option value="منتهي">منتهي</option>
-      </select>
-      <label>تاريخ الانتهاء:</label>
-      <input type="date" id="expiryDate">
-      <label>الصورة:</label>
-      <input type="file" id="imageInput">
-      <div class="modal-actions">
-        <button onclick="saveInsurance()">حفظ</button>
-        <button onclick="closeForm()">إلغاء</button>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
